@@ -38,7 +38,6 @@ public class BaseTest {
 		Log.info("Starting up Webdriver...");
 		
 		ChromeOptions capability = new ChromeOptions();
-		//capability.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
 		capability.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS,true);
 
 		
