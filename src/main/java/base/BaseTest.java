@@ -2,6 +2,7 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -34,7 +35,15 @@ public class BaseTest {
 	@BeforeMethod
 	public void setUp() {
 		Log.info("Starting up Webdriver...");
+		
+		ChromeOptions options = new ChromeOptions();
+
+		options.addArguments("--ignore-certificate-errors");
+		options.addArguments("--allow-insecure-localhost");
+		options.addArguments("--disable-web-security");
+		
 		driver = new ChromeDriver();
+		
 		driver.manage().window().maximize();
 		Log.info("Navigating to URL...");
 		driver.get("https://www.saucedemo.com/");
