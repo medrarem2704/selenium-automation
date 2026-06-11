@@ -3,6 +3,7 @@ package base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -36,13 +37,12 @@ public class BaseTest {
 	public void setUp() {
 		Log.info("Starting up Webdriver...");
 		
-		ChromeOptions options = new ChromeOptions();
+		ChromeOptions capability = new ChromeOptions();
+		//capability.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+		capability.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS,true);
 
-		options.addArguments("--ignore-certificate-errors");
-		options.addArguments("--allow-insecure-localhost");
-		options.addArguments("--disable-web-security");
 		
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(capability);
 		
 		driver.manage().window().maximize();
 		Log.info("Navigating to URL...");
