@@ -38,6 +38,7 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		Log.info("Navigating to URL...");
 		driver.get("https://www.saucedemo.com/");
+		
 	}
 
 	@AfterMethod
@@ -54,7 +55,7 @@ public class BaseTest {
 		
 		if (driver != null) {
 			Log.info("Closing browser...");
-			driver.quit();
+			//driver.quit();
 		}
 	}
 

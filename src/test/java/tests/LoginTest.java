@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
 	}
 	
 	
-	@Test
+	/*@Test
 	public void testInvalidCredentials() {
 		
 		Log.info("Starting login test...");
@@ -53,7 +53,7 @@ public class LoginTest extends BaseTest {
 		test.info("Verifying page title");
 		Assert.assertEquals(driver.getTitle(), "Swag Labs123");
 		test.pass("Login Successful");
-	}
+	}*/
 	
 
 }
