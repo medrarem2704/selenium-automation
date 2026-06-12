@@ -33,8 +33,8 @@ public class LoginTest extends BaseTest {
 	}
 	
 	
-	@Test
-	/*public void testInvalidCredentials() {
+	/*@Test
+	public void testInvalidCredentials() {
 		
 		Log.info("Starting login test...");
 		test = ExtentReportManager.createTest("Login Test with invalid credentials");
